@@ -1,5 +1,12 @@
+
+
 .debug_panel {
     margin: 10px;
     background-color: bisque;
     height: 97vh;
+}
+
+.abv {
+    margin-left: -3vw;
+    margin-right: -3vw;
 }

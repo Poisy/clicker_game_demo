@@ -5,6 +5,8 @@ import { LeftPanel } from './LeftPanel.js';
 import { RightPanel } from './RightPanel.js';
 import { MiddlePanel } from './MiddlePanel.js';
 import Timer from './tools/timer.js';
+import getItem from './tools/file_manager.js';
+import './styles/debug.css';
 
 class App extends React.Component {
     constructor(props) {
@@ -19,8 +21,22 @@ class App extends React.Component {
             xp: 0,
             xp_required: 5,
             gold: 0,
-            playtime: "00:00:00"
+            playtime: "00:00:00",
+            head : { name : "leather", dmg : 5, gold : 25 },
+            chest : { name : "leather", dmg : 5, gold : 25 },
+            shoulders : { name : "leather", dmg : 5, gold : 25 },
+            legs : { name : "leather", dmg : 5, gold : 25 },
+            boots : { name : "leather", dmg : 5, gold : 25 },
+            neck : { name : "iron necklace of good fortune", dmg : 5, gold : 25 },
+            ring : { name : "iron ring of strength", dmg : 5, gold : 25 }
         }
+        this.head = 0;
+        this.shoulders = 0;
+        this.chest = 0;
+        this.legs = 0;
+        this.boots = 0;
+        this.neck = 0;
+        this.ring = 0;
         this.timer = new Timer(0, 0, 0);
     }
 
@@ -36,14 +52,23 @@ class App extends React.Component {
     render() {   
         return (
             <div className="App container">
-                <div className="row">
+                <div className="row abv">
+                     
                     <LeftPanel
     	                dps = {this.state.damage_per_second} 
                         gold={this.state.gold}
                         current_level={this.state.current_level}
                         click_damage={this.state.click_damage}
                         monsters_killed={this.state.monsters_killed}
-                        playtime={this.state.playtime}>
+                        playtime={this.state.playtime}
+                        upgradeItem={(type) => this.upgradeItem(type)}
+                        head={this.state.head}
+                        shoulders={this.state.shoulders}
+                        chest={this.state.chest}
+                        legs={this.state.legs}
+                        boots={this.state.boots}
+                        neck={this.state.neck}
+                        ring={this.state.ring}>
                     </LeftPanel>
 
                     <MiddlePanel
@@ -55,6 +80,7 @@ class App extends React.Component {
                     </MiddlePanel>
 
                     <RightPanel></RightPanel>
+                    
                 </div>
             </div>
         );
@@ -101,6 +127,78 @@ class App extends React.Component {
     
     updateTime() {
         this.state.time.setSeconds(this.state.time.getSeconds()+1);
+    }
+
+    upgradeItem(type) {
+        let current_item;
+
+        switch (type) {
+            case "head": 
+                current_item = this.head;
+                break;
+            case "shoulders": 
+                current_item = this.shoulders;
+                break;
+            case "chest": 
+                current_item = this.chest;
+                break;
+            case "legs": 
+                current_item = this.legs;
+                break;
+            case "boots": 
+                current_item = this.boots;
+                break;
+            case "neck": 
+                current_item = this.neck;
+                break;
+            case "ring": 
+                current_item = this.ring;
+                break;
+            default:
+                break;
+        }
+
+        let new_item = getItem(type, current_item+1);
+        console.log(new_item['name']);
+        if (this.state.gold >= new_item['gold']) {
+            this.setState({ gold : this.state.gold - new_item['gold'] }, () => {
+                switch (type) {
+                    case "head": 
+                        this.head++;
+                        this.setState({ head : new_item });
+                        break;
+                    case "shoulders": 
+                        this.shoulders++;
+                        this.setState({ shoulders : new_item });
+                        break;
+                    case "chest": 
+                        this.chest++;
+                        this.setState({ chest : new_item });
+                        break;
+                    case "legs": 
+                        this.legs++;
+                        this.setState({ legs : new_item });
+                        break;
+                    case "boots": 
+                        this.boots++;
+                        this.setState({ boots : new_item });
+                        break;
+                    case "neck": 
+                        this.neck++;
+                        this.setState({ neck : new_item });
+                        break;
+                    case "ring": 
+                        this.ring++;
+                        this.setState({ ring : new_item });
+                        break;
+                    default:
+                        break;
+                }
+            });
+        }
+        else {
+            alert("You have not enough Gold!");
+        }
     }
 }
 
