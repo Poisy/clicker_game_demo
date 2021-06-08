@@ -1,16 +1,16 @@
 {
     "head" : {        
         "0" : { "name" : "leather", "dmg" : 5, "gold" : 25 },
-        "1" : { "name" : "copper", "dmg" : 5, "gold" : 50 },
-        "2" : { "name" : "tin", "dmg" : 5, "gold" : 100 },
-        "3" : { "name" : "iron", "dmg" : 5, "gold" : 200 },
-        "4" : { "name" : "lead", "dmg" : 5, "gold" : 400 },
-        "5" : { "name" : "silver", "dmg" : 5, "gold" : 800 },
-        "6" : { "name" : "golden", "dmg" : 5, "gold" : 1000 },
-        "7" : { "name" : "platinum", "dmg" : 5,"gold" : 2000 },
-        "8" : { "name" : "cobalt", "dmg" : 5, "gold" : 4000 },
-        "9" : { "name" : "obsidian", "dmg" : 5, "gold" : 8000 },
-        "10" : { "name" : "crimson", "dmg" : 5, "gold" : 15000 }
+        "1" : { "name" : "copper", "dmg" : 10, "gold" : 50 },
+        "2" : { "name" : "tin", "dmg" : 15, "gold" : 100 },
+        "3" : { "name" : "iron", "dmg" : 20, "gold" : 200 },
+        "4" : { "name" : "lead", "dmg" : 25, "gold" : 400 },
+        "5" : { "name" : "silver", "dmg" : 30, "gold" : 800 },
+        "6" : { "name" : "golden", "dmg" : 35, "gold" : 1000 },
+        "7" : { "name" : "platinum", "dmg" : 40,"gold" : 2000 },
+        "8" : { "name" : "cobalt", "dmg" : 45, "gold" : 4000 },
+        "9" : { "name" : "obsidian", "dmg" : 50, "gold" : 8000 },
+        "10" : { "name" : "crimson", "dmg" : 55, "gold" : 15000 }
 },
     "shoulders" : {
         "0" : { "name" : "leather", "dmg" : 5, "gold" : 25 },
@@ -89,19 +89,19 @@
     },
 
     "neck" : {
-        "0" : { "name" : "iron necklace of good fortune", "dmg" : 5, "gold" : 25 },
-        "1" : { "name" : "silver necklace of good fortune", "dmg" : 5, "gold" : 50 },
-        "2" : { "name" : "golden necklace of good fortune", "dmg" : 5, "gold" : 100 },
-        "3" : { "name" : "cobalt necklace of good fortune", "dmg" : 5, "gold" : 200 },
-        "4" : { "name" : "crimson necklace of good fortune", "dmg" : 5, "gold" : 400 }
+        "0" : { "name" : "iron necklace of good fortune", "income" : 5, "gold" : 5 },
+        "1" : { "name" : "silver necklace of good fortune", "income" : 10, "gold" : 50 },
+        "2" : { "name" : "golden necklace of good fortune", "income" : 15, "gold" : 100 },
+        "3" : { "name" : "cobalt necklace of good fortune", "income" : 20, "gold" : 200 },
+        "4" : { "name" : "crimson necklace of good fortune", "income" : 25, "gold" : 400 }
     },
 
     "ring" : {
-        "0" : { "name" : "iron ring of strength", "dmg" : 5, "gold" : 25 },
-        "1" : { "name" : "iron ring of wisdom", "dmg" : 5, "gold" : 50 },
-        "2" : { "name" : "golden ring of strength", "dmg" : 5, "gold" : 100 },
-        "3" : { "name" : "golden ring of wisdom", "dmg" : 5, "gold" : 200 },
-        "4" : { "name" : "crimson ring of strength", "dmg" : 5, "gold" : 400 },
-        "5" : { "name" : "crimson ring of wisdom", "dmg" : 5, "gold" : 400 }
+        "0" : { "name" : "iron ring of strength", "click_damage" : 5, "gold" : 25 },
+        "1" : { "name" : "iron ring of wisdom", "idle_damage" : 5, "gold" : 50 },
+        "2" : { "name" : "golden ring of strength", "click_damage" : 5, "gold" : 100 },
+        "3" : { "name" : "golden ring of wisdom", "idle_damage" : 5, "gold" : 200 },
+        "4" : { "name" : "crimson ring of strength", "click_damage" : 5, "gold" : 400 },
+        "5" : { "name" : "crimson ring of wisdom", "idle_damage" : 5, "gold" : 400 }
     }
 }
