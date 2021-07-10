@@ -1,8 +1,8 @@
 class Timer {
-    constructor(seconds, minutes, hours) {
-        this.seconds = seconds;
-        this.minutes = minutes;
-        this.hours = hours;
+    constructor(time) {
+        this.hours = parseInt(time[0]+time[1]);
+        this.minutes = parseInt(time[3]+time[4]);
+        this.seconds = parseInt(time[6] + time[7]);
     }
 
     start(func) {

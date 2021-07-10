@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './styles/bootstrap.min.css';
 import './styles/debug.css';
+import './styles/MiddlePanel.css';
 import monster from './images/monsters/sample_monster.png';
 
 export class MiddlePanel extends Component {
@@ -10,8 +11,8 @@ export class MiddlePanel extends Component {
 
     render() {
         return (
-            <div className="col debug_panel">
-                <img className="monster" src={monster} onClick={() => this.doDamage()} />
+            <div className="col-3 debug_panel">
+                <img className="monster" src={monster} onClick={() => this.props.doDamage()} />
 
                 <p>Monster name: Kyubey</p>
                 <div className="progress">
@@ -26,10 +27,6 @@ export class MiddlePanel extends Component {
                 </div>
             </div>
         )
-    }
-
-    doDamage() {
-        this.props.doDamage();
     }
 }
 
